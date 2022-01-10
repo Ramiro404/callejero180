@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="grid col-5 " *ngIf="total > 0; else emptyCart">
+        <div class="span-3">
+            <mat-list role="list" *ngFor="let product of shoppingCart; let i index last as last">
+                <mat-list-item role="listitem">
+                    <div mat-line class="bg text-color">{{product.name}}</div>
+                    <strong mat-line class="bg text-color">{{product.price | currency}}</strong>
+                    <span class="separator"></span>
+                    <button mat-button color="warn" (click)="remove(i)">Eliminar</button>
+                    <mat-divider  *ngIf="!last"></mat-divider>
+                </mat-list-item>
+            </mat-list>
+        </div>
+        <div class="span-1 h-100" >
+            <h3>Total {{ total | currency }}</h3>
+            <a mat-raised-button routerLink="../payment">Proceder al pago</a>
+        </div>
+        
+    </div>
+    <ng-template #emptyCart>
+        <h1>Tu carrito de compras esta vacío.</h1>
+    </ng-template>
+</div>

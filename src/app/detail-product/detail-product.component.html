@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="grid col-6">
+      <div class="span-4">
+          <img [src]="product.image" [alt]="product.name" />
+      </div>
+      <div class="span-2 text-color">
+          <h2 class="text-color">{{product.name}}</h2>
+          <p class="text-color">{{product.description}}</p>
+          <h4 class="text-color"><strong>{{ product.price | currency }}</strong></h4>
+          <button mat-button (click)="addProduct()">Agregar al carrito</button>
+          <a mat-button routerLink="../payment">Comprar ahora</a>
+      </div>
+    </div>
+  </div>
+  

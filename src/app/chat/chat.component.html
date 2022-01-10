@@ -1,0 +1,53 @@
+<!--
+<form #userMessage="ngForm" (ngSubmit)="sendMessage(userMessage)">
+    <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Escribe un mensaje...</mat-label>
+        <textarea matInput placeholder="¿En qué podemos ayudarle?" name="message" #message ngModel></textarea>
+      </mat-form-field>
+      
+      <button mat-fab color="primary" type="submit"><mat-icon><i class="far fa-paper-plane"></i></mat-icon></button>
+</form>-->
+
+
+<div class="chat-grid">
+    <span>Bienvenido a nuestra página</span>
+    <button mat-flat-button>x</button>
+    <div class="messages  d-flex flex-end flex-column w-100 h-100 bg-blue"  >
+      <span class="text-message" *ngFor="let message of messages">
+        {{ message.message }}
+      </span>
+
+      <!--
+        <mat-list
+      role="list"
+      ngFor="let message of messages"
+      class=" bg-blue w-100 text-color"
+      style="height: 100%;"
+    >
+      <mat-list-item
+        role="listitem"
+        class="w-100  bg-red"
+        [ngClass]="message.user == 1 ? 'text-left' : 'text-right'"
+      >
+        <p class="bg text-color">{{ message.message }}</p>
+      </mat-list-item>
+    </mat-list>-->
+    </div>
+    <form #userMessage="ngForm" (ngSubmit)="sendMessage(userMessage)" class="footer chat-grid">
+        <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Escribe un mensaje...</mat-label>
+            <textarea
+              matInput
+              placeholder="¿En qué podemos ayudarle?"
+              name="message"
+              #message
+              ngModel
+            ></textarea>
+          </mat-form-field>
+
+          <button mat-fab color="primary" type="submit">
+            <mat-icon><i class="far fa-paper-plane"></i></mat-icon>
+          </button>
+    </form>
+    
+</div>

@@ -1,0 +1,39 @@
+<div class="container bg text-color">
+  <h1>Productos</h1>
+  <div class="grid col-12">
+    <div class="span-3 md-span-4 sm-span-6" *ngFor="let product of products">
+      <mat-card class="dark-card text-color">
+        <img
+          mat-card-image
+          [src] = "product.image"
+          [alt] = "product.name"
+          class="object-cover view-height"
+        />
+        <mat-card-content>
+          <p>{{ product.name }}</p>
+          <mat-card-title>{{ product.price| currency }}</mat-card-title>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="addProduct(product)">Agregar al carrito</button>
+          <a [routerLink]="['../product-detail/', product.id]" mat-button>Ver detalle</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<div class="p-fixed right-0 bottom-0 m-2 bg text-color">
+      <button mat-mini-fab color="primary" (click)="openChat()" *ngIf="!showChat" ><i class="far fa-comment-dots"></i></button>
+
+      <div style="width: 500px;" *ngIf="showChat">
+        <app-chat></app-chat>   
+        <!--
+        <mat-grid-list cols="4" rowHeight="fit" class="h-auto">
+          <mat-grid-tile colspan="3" class="bg-red">1sdfdsfdfds dsfdsfdsf sdfsd fdsfsdfds ff dsf sdfdsfdsf ds</mat-grid-tile>
+          <mat-grid-tile colspan="1" class="bg-blue">2</mat-grid-tile>
+          <mat-grid-tile colspan="4" rowspan="3" class="bg-red"></mat-grid-tile>
+          <mat-grid-tile colspan="3" class="bg-blue"></mat-grid-tile>
+          <mat-grid-tile colspan="1" class="bg-red"></mat-grid-tile>
+        </mat-grid-list>-->
+      </div>
+</div>

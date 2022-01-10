@@ -1,0 +1,24 @@
+.chat-grid{
+    display: grid;
+    grid-template-columns: 90% 10%;
+
+}
+
+.messages, .footer{
+    grid-column: 1 / span 2;
+}
+.messages{
+    height: 50vh;
+    overflow-y: scroll;
+}
+
+.text-message{
+    width: auto;
+    background-color: rgb(255, 217, 0);
+    padding: 10px;
+    margin: 1px;
+    margin-left: 15px;
+    border-radius: 15px;
+
+
+}

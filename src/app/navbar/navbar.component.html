@@ -1,0 +1,7 @@
+<mat-toolbar color=primary>
+    <!--<span>Callejero 180</span>-->
+    <img src="../../assets/img/logo-callejero-180.png" class="logo"/>
+    <span class="spacer"></span>
+    <a routerLink="main" mat-button>Productos</a>
+    <a routerLink="shopping-cart" mat-button [matBadge]="shoppingCart.length" matBadgePosition="after">Carrito</a>
+</mat-toolbar>

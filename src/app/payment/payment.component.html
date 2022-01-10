@@ -1,0 +1,109 @@
+<div class="container">
+  <mat-horizontal-stepper #stepper class="dark-card">
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel ><span class="text-color">Ingresa los datos de pago</span></ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Nombre completo</mat-label>
+          <input
+            matInput
+            placeholder="Last name, First name"
+            formControlName="firstCtrl"
+            required
+          />
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Dirección</mat-label>
+          <textarea matInput placeholder="Colonia, calle, número exterior y/o interior"></textarea>
+          <mat-hint>Favor de agregar instrucciones de entrega</mat-hint>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Telefono</mat-label>
+          <input type="tel" matInput>
+        </mat-form-field>
+        <br>
+
+
+        <div>
+          <button mat-raised-button matStepperNext color="primary">
+            Continuar
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel ><span class="text-color">Ingresa los datos de pago</span></ng-template>
+        <mat-form-field class="w-30" appearance="fill">
+          <mat-label>Número de tarjeta</mat-label>
+          <input
+            matInput
+            formControlName="secondCtrl"
+            type="number"
+            required
+          />
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="w-30" appearance="fill">
+          <mat-label>Nombre completo del titular</mat-label>
+          <input
+            matInput
+            formControlName="secondCtrl"
+            type="text"
+            required
+          />
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Mes de vencimiento</mat-label>
+          <input
+            matInput
+            formControlName="secondCtrl"
+            type="number"
+            required
+          />
+        </mat-form-field>
+        &nbsp;
+        <mat-form-field appearance="fill">
+          <mat-label>Año de vencimiento</mat-label>
+          <input
+            matInput
+            formControlName="secondCtrl"
+            type="number"
+            required
+          />
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Número de verificación</mat-label>
+          <input
+            matInput
+            formControlName="secondCtrl"
+            type="number"
+            required
+          />
+        </mat-form-field>
+
+
+        <div>
+          <button mat-button matStepperNext>Confirmar</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel><span class="text-color">Completado</span></ng-template>
+      <h1>Gracias por su compra</h1>
+      <p>Su pedido se realizó con exito.</p>
+      <div>
+        <a mat-raised-button color="primary"  href="../main">Ir a inicio</a>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
+
